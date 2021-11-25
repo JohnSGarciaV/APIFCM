@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import {MongoClient} from 'mongodb';
 
 
-dotenv.config({ path: './config.env'});
+dotenv.config({ path: './.env'});
 const stringConexion = process.env.DATABASE_URL;
 const client = new MongoClient(stringConexion, {
   useNewUrlParser: true,
