@@ -1,7 +1,7 @@
 {
   "name": "n",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "dependencies": {
     "@heroku/buildpack-registry": "^1.0.1",
