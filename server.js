@@ -7,7 +7,7 @@ import rutasActividadesV from './rutes/actividadesv.js';
 import rutasActividadesF from './rutes/actividadesf.js';
 import rutasSales from './rutes/ventas.js';
 
-dotenv.config({ path: './config.env'});
+dotenv.config();
 
 const puerto = process.env.PORT || 5000;
 const app = Express();
