@@ -1,5 +1,5 @@
 import  Express  from 'express';
-import { createVoluntario, deleteVoluntario, editVoluntario, queryAllVoluntarios } from '../controllers/voluntarios/voluntario.js';
+import { createVoluntario, deleteVoluntario, editVoluntario, queryAllVoluntarios, queryVoluntario } from '../controllers/voluntarios/voluntario.js';
 
 
 const rutasVoluntario = Express.Router();
@@ -15,6 +15,10 @@ const genericCallback = (response) => (err, result) =>{
 
 rutasVoluntario.route('/voluntarios').get((req, res) => {
   queryAllVoluntarios(genericCallback(res));
+});
+
+rutasVoluntario.route('/voluntario/:id').get((req, res) => {
+  queryVoluntario(req.params.id, genericCallback(res));
 });
 
 rutasVoluntario.route('/voluntarios/delete').delete((req, res) =>{

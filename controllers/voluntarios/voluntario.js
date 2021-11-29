@@ -5,6 +5,10 @@ const queryAllVoluntarios = async (callback) => {
     getDB().collection('voluntarios').find({}).toArray(callback);
 }
 
+const queryVoluntario = async (id, callback) => {
+    await getDB().collection('voluntarios').findOne({_id: new ObjectId(id)},callback);
+  }
+
 const createVoluntario = async (dataProduct, callback) => {
     delete dataProduct.titulo;
     delete dataProduct.show;
@@ -27,4 +31,4 @@ const deleteVoluntario = async (dataProduct, callback) => {
 }
 
 
-export { queryAllVoluntarios, createVoluntario, editVoluntario, deleteVoluntario }
+export { queryAllVoluntarios, queryVoluntario, createVoluntario, editVoluntario, deleteVoluntario }
