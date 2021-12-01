@@ -6,7 +6,7 @@ const queryAllVoluntarios = async (callback) => {
 }
 
 const queryVoluntario = async (id, callback) => {
-    await getDB().collection('voluntarios').findOne({_id: new ObjectId(id)},callback);
+    await getDB().collection('voluntarios').findOne({ndoc: id},callback);
   }
 
 const createVoluntario = async (dataProduct, callback) => {
