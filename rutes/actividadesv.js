@@ -27,7 +27,6 @@ rutasActividadesV.route('/actividadesv/delete').delete((req, res) =>{
 });
 
 rutasActividadesV.route('/actividadesv/edit').patch((req, res)=>{
-  console.long("Entro");
    editActividadV(req.body, genericCallback(res));
 
 });
