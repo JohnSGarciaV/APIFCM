@@ -1,5 +1,5 @@
 import  Express  from 'express';
-import { queryAllActividadV, queryActividadV, createActividadV, editActividadV, deleteActividadV } from '../controllers/actividadesv/actividadesv.js';
+import { queryAllActividadV, queryActividadV, queryActividadVoluntario, createActividadV, editActividadV, deleteActividadV } from '../controllers/actividadesv/actividadesv.js';
 
 
 
@@ -20,6 +20,10 @@ rutasActividadesV.route('/actividadesv').get((req, res) => {
 
 rutasActividadesV.route('/actividadv/:id').get((req, res) => {
   queryActividadV(req.params.id, genericCallback(res));
+});
+
+rutasActividadesV.route('/actividadv/voluntario/:id').get((req, res) => {
+  queryActividadVoluntario(req.params.id, genericCallback(res));
 });
 
 rutasActividadesV.route('/actividadesv/delete').delete((req, res) =>{
