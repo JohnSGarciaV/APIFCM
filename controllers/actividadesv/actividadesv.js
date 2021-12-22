@@ -10,7 +10,8 @@ const queryActividadV = async (id, callback) => {
 }
 
 const queryActividadVoluntario = async (id, callback) => {
-  await getDB().collection('actividadesv').find({"participantes.qty": {id: id}},callback);
+  console.log(id);
+  await getDB().collection('actividadesv').find({"participantes.id":new ObjectId(id)}).toArray(callback);
 }
 
 

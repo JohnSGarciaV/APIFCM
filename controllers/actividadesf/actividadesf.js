@@ -9,6 +9,11 @@ const queryActividadF = async (id, callback) => {
   await getDB().collection('actividadesf').findOne({_id: new ObjectId(id)},callback);
 }
 
+const queryActividadVoluntario = async (id, callback) => {
+  console.log(id);
+  await getDB().collection('actividadesf').find({"participantes.id":new ObjectId(id)}).toArray(callback);
+}
+
 const createActividadF = async (dataActivity, callback) => {
   const participantes = [];
   dataActivity.participantes.map((elemento) => 
@@ -32,4 +37,4 @@ const deleteActividadF = async (dataActivity, callback) => {
 }
 
 
-export { queryAllActividadF, queryActividadF, createActividadF, editActividadF, deleteActividadF }
+export { queryAllActividadF, queryActividadF, createActividadF, editActividadF, deleteActividadF, queryActividadVoluntario }

@@ -1,5 +1,5 @@
 import  Express  from 'express';
-import { queryAllActividadF, queryActividadF, createActividadF, editActividadF, deleteActividadF } from '../controllers/actividadesf/actividadesf.js';
+import { queryAllActividadF, queryActividadF, createActividadF, editActividadF, deleteActividadF, queryActividadVoluntario } from '../controllers/actividadesf/actividadesf.js';
 
 
 
@@ -16,6 +16,10 @@ const genericCallback = (response) => (err, result) =>{
 
 rutasActividadesF.route('/actividadesf').get((req, res) => {
   queryAllActividadF(genericCallback(res));
+});
+
+rutasActividadesF.route('/actividadf/voluntario/:id').get((req, res) => {
+  queryActividadVoluntario(req.params.id, genericCallback(res));
 });
 
 rutasActividadesF.route('/actividadf/:id').get((req, res) => {
