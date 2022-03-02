@@ -11,7 +11,7 @@ const queryActividadV = async (id, callback) => {
 
 const queryActividadVoluntario = async (id, callback) => {
   console.log(id);
-  await getDB().collection('actividadesv').find({"participantes.id":new ObjectId(id)}).toArray(callback);
+  await getDB().collection('actividadesv').aggregate([{$match: {"participantes.id":id}}]).toArray(callback);
 }
 
 
